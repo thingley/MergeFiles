@@ -86,9 +86,9 @@
 			this.tableLayoutPanel1.Controls.Add(this.butFind, 2, 1);
 			this.tableLayoutPanel1.Controls.Add(this.txtMergedFile, 1, 2);
 			this.tableLayoutPanel1.Controls.Add(this.lblMergedFile, 0, 2);
-			this.tableLayoutPanel1.Controls.Add(this.txtSave, 2, 3);
-			this.tableLayoutPanel1.Controls.Add(this.butRun, 2, 2);
 			this.tableLayoutPanel1.Controls.Add(this.statusStrip, 0, 4);
+			this.tableLayoutPanel1.Controls.Add(this.butRun, 2, 2);
+			this.tableLayoutPanel1.Controls.Add(this.txtSave, 2, 3);
 			this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
 			this.tableLayoutPanel1.Name = "tableLayoutPanel1";
 			this.tableLayoutPanel1.RowCount = 5;
@@ -107,8 +107,9 @@
 			this.txtMergedFile.Multiline = true;
 			this.txtMergedFile.Name = "txtMergedFile";
 			this.txtMergedFile.ReadOnly = true;
+			this.tableLayoutPanel1.SetRowSpan(this.txtMergedFile, 2);
 			this.txtMergedFile.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-			this.txtMergedFile.Size = new System.Drawing.Size(656, 346);
+			this.txtMergedFile.Size = new System.Drawing.Size(656, 375);
 			this.txtMergedFile.TabIndex = 3;
 			// 
 			// lblMergedFile
