@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<merge>
+	<template>
+		<location>
+			D:\SVN\DEV\12.0.211\24403\svn\Database\Scripts\ProtocolSync\Hotfixes\Hotfix_12.0.211_TEMPLATE.txt
+		</location>
+		<encoding>
+			UTF8
+		</encoding>
+	</template>
+	<output>
+		<location>
+			D:\SVN\DEV\12.0.211\24403\svn\Database\Scripts\ProtocolSync\Hotfixes\Hotfix_12.0.211_TEMPLATE.txt
+		</location>
+		<encoding>
+			UTF8
+		</encoding>
+	</output>
+	<placeholder>
+		<key>
+			###PLACEHOLDER1###
+		</key>
+		<location>
+			D:\SVN\DEV\12.0.211\24403\svn\Database\Installation Scripts\Patch\Patch.v120.Tag211.trigfree.CTC24403.sql
+		</location>
+		<encoding>
+			UTF8
+		</encoding>
+	</placeholder>
+	<placeholder>
+		<key>
+			###PLACEHOLDER2###
+		</key>
+		<location>
+			D:\SVN\DEV\12.0.211\24403\svn\Database\Scripts\ProtocolSync\Views\InvoiceeContact.sql
+		</location>
+		<encoding>
+			UTF8
+		</encoding>
+	</placeholder>
+</merge>
