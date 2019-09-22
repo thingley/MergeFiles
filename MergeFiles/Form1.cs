@@ -22,6 +22,13 @@ namespace MergeFiles
 		private string _outputEncoding;
 		private List<PlaceHolder> _placeHolders;
 
+		#region Properties
+
+		// read-only expression bodied property
+		private bool HasErrorMessage => tsslError.Text != string.Empty;
+
+		#endregion Properties
+
 		public Form1()
 		{
 			InitializeComponent();
@@ -52,12 +59,12 @@ namespace MergeFiles
 
 		private void ButRun_Click(object sender, EventArgs e)
 		{
-			if (!HasErrorMessage())
+			if (!HasErrorMessage)
 			{
 				SetErrorMessage(ParseXML());
 			}
 
-			if (!HasErrorMessage())
+			if (!HasErrorMessage)
 			{
 				SetErrorMessage(PerformMerge());
 			}
@@ -65,7 +72,7 @@ namespace MergeFiles
 
 		private void TxtSave_Click(object sender, EventArgs e)
 		{
-			if (!HasErrorMessage())
+			if (!HasErrorMessage)
 			{
 				SetErrorMessage(SaveOutput());
 			}
@@ -243,11 +250,6 @@ namespace MergeFiles
 		private void SetErrorMessage(string errorMessage)
 		{
 			tsslError.Text = errorMessage;
-		}
-
-		private bool HasErrorMessage()
-		{
-			return tsslError.Text != string.Empty;
 		}
 
 		#endregion Helper Methods
