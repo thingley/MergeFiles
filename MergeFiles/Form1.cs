@@ -93,7 +93,6 @@ namespace MergeFiles
 			};
 
 			readerSettings.Schemas.Add(null, "MergeFiles.xsd");
-			readerSettings.ValidationEventHandler += readerSettings_ValidationEventHandler;
 
 			try
 			{
@@ -109,11 +108,6 @@ namespace MergeFiles
 			}
 
 			return result;
-		}
-
-		private void readerSettings_ValidationEventHandler(object sender, System.Xml.Schema.ValidationEventArgs e)
-		{
-			throw new ApplicationException(e.Message);
 		}
 
 		private string ValidateXML_METHOD2()
