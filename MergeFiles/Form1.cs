@@ -171,7 +171,7 @@ namespace MergeFiles
 						string key = reader.ReadElementContentAsString("key", "").Trim() ;
 						string location = reader.ReadElementContentAsString("location", "").Trim();
 						string encoding = reader.ReadElementContentAsString("encoding", "").Trim();
-						PlaceHolder placeHolder = new PlaceHolder(key, location, GetEncoding(encoding));
+						PlaceHolder placeHolder = new PlaceHolder(key, location, Encoding.GetEncoding(encoding));
 						_placeHolders.Add(placeHolder);
 					}
 				}
@@ -190,7 +190,7 @@ namespace MergeFiles
 
 			try
 			{
-				string output = File.ReadAllText(_templateLocation, GetEncoding(_templateEncoding));
+				string output = File.ReadAllText(_templateLocation, Encoding.GetEncoding(_templateEncoding));
 
 				foreach (PlaceHolder placeHolder in _placeHolders)
 				{
@@ -214,7 +214,7 @@ namespace MergeFiles
 
 			try
 			{
-				File.WriteAllText(_outputLocation, txtMergedFile.Text, GetEncoding(_outputEncoding));
+				File.WriteAllText(_outputLocation, txtMergedFile.Text, Encoding.GetEncoding(_outputEncoding));
 			}
 			catch (Exception ex)
 			{
@@ -227,25 +227,6 @@ namespace MergeFiles
 		#endregion Action Methods
 
 		#region Helper Methods
-
-		private Encoding GetEncoding(string encoding)
-		{
-			Encoding result = null;
-
-			switch (encoding)
-			{
-				case "ASCII":
-					result = Encoding.ASCII;
-					break;
-				case "UTF8":
-					result = Encoding.UTF8;
-					break;
-				default: throw new ArgumentException("Unrecognised encoding - currently accepted encoding values are ASCII and UTF8.");
-					break;
-			}
-
-			return result;
-		}
 
 		private void SetErrorMessage(string errorMessage)
 		{
